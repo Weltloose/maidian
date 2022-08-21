@@ -39,7 +39,8 @@ func EmitPv(w http.ResponseWriter, r *http.Request) {
 		"url":    bodyStruct.Data.Url,
 		"did":    fmt.Sprintf("%d", util.RandomInt64()),
 	})
-	fmt.Fprintf(w, "Hello World!") //这个写入到w的是输出到客户端的
+	w.WriteHeader(200)
+	w.Write([]byte("success"))
 }
 
 func QueryPv(w http.ResponseWriter, r *http.Request) {
@@ -69,11 +70,11 @@ func QueryPv(w http.ResponseWriter, r *http.Request) {
 			metricsMap["url:"+tagMap["url"]][offset].Y += v
 		}
 	}
-	fmt.Println(util.JsonStr(metricsMap))
-
 	err = querier.Close()
 	util.NoErr(err)
-	fmt.Fprintf(w, "Hello World!")
+	jsonBs, _ := json.Marshal(metricsMap)
+	w.WriteHeader(200)
+	w.Write(jsonBs)
 }
 
 func init() {

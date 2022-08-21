@@ -31,7 +31,7 @@ func EmitCounter(db *tsdb.DB, counter int, timeStamp int64, tagsKv map[string]st
 }
 
 func InitTsDb(name string) *tsdb.DB {
-	db, err := tsdb.Open("./"+name, nil, nil, tsdb.DefaultOptions(), nil)
+	db, err := tsdb.Open("./volumn/"+name, nil, nil, tsdb.DefaultOptions(), nil)
 	if err != nil {
 		panic(err)
 	}

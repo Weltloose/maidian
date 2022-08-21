@@ -2,10 +2,7 @@ module maidian
 
 go 1.17
 
-require (
-	github.com/go-redis/redis v6.15.9+incompatible
-	github.com/prometheus/prometheus v0.38.0
-)
+require github.com/prometheus/prometheus v0.38.0
 
 require (
 	cloud.google.com/go/compute v1.9.0 // indirect
@@ -25,7 +22,6 @@ require (
 	github.com/kr/pretty v0.3.0 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.2-0.20181231171920-c182affec369 // indirect
 	github.com/mwitkow/go-conntrack v0.0.0-20190716064945-2f068394615f // indirect
-	github.com/nxadm/tail v1.4.8 // indirect
 	github.com/oklog/ulid v1.3.1 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
